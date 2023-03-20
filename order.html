@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>FEND Projektarbete Webshop - Beställningssida</title>
+        <link
+            rel="stylesheet"
+            href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css"
+            integrity="sha384-r4NyP46KrjDleawBgD5tp8Y7UzmLA05oM1iAEQ17CSuDqnUK2+k9luXQOfXJCJ4I"
+            crossorigin="anonymous"
+        />
+        <script
+            src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+            integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+            crossorigin="anonymous"
+        ></script>
+        <script
+            src="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/js/bootstrap.min.js"
+            integrity="sha384-oesi62hOLfzrys4LxRF63OJCXdXDipiYWBnvTl9Y9/TRlw5xlKIEHpNyvvDShgf/"
+            crossorigin="anonymous"
+        ></script>
+        <link rel="stylesheet" href="css/style.css" />
+    </head>
+    <body>
+        <div id="navbar">
+            <nav
+                class="navbar navbar-expand-lg bg-body-tertiary navbar-dark bg-dark"
+            >
+                <div class="container-fluid">
+                    <a class="navbar-brand" href="#">Fake Store</a>
+                    <button
+                        class="navbar-toggler"
+                        type="button"
+                        data-bs-toggle="collapse"
+                        data-bs-target="#navbarNavAltMarkup"
+                        aria-controls="navbarNavAltMarkup"
+                        aria-expanded="false"
+                        aria-label="Toggle navigation"
+                    >
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div
+                        class="collapse navbar-collapse"
+                        id="navbarNavAltMarkup"
+                    >
+                        <div class="navbar-nav">
+                            <a
+                                class="nav-link active"
+                                aria-current="page"
+                                href="index.html"
+                                >Start</a
+                            >
+                            <a class="nav-link" href="contact.html">Kontakt</a>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+        </div>
+        <div class="container md-12 mt-5">
+            <h1>Du har valt:</h1>
+            <!-- Produktinfo börjar -->
+            <div class="chosen-product">
+                <!-- Uppbyggnad card -->
+                <div class="col-md-12 mb-4">
+                    <div class="card flex-row">
+                        <img
+                            class="card-img-top"
+                            src="https://fakestoreapi.com/img/61mtL65D4cL._AC_SX679_.jpg"
+                            alt="Card image cap"
+                        />
+                        <div class="card-body">
+                            <h5 class="card-title">Slim Casual Shirt</h5>
+                            <p class="card-text">
+                                Lorem ipsum dolor sit amet, consectetur
+                                adipiscing elit. Nulla eget ante lectus.
+                            </p>
+                            <p class="price">1 299 kr</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Slut uppbyggnad card -->
+            </div>
+            <!-- Produktinfo slutar -->
+
+            <!-- Beställningsformulär börjar -->
+            <div class="py-5 text-center">
+        
+                <h2>Checkout form</h2>
+                <p class="lead">Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem, necessitatibus nemo, explicabo pariatur, quas doloribus qui consectetur laboriosam incidunt sapiente provident similique eos suscipit ducimus repellat sint animi excepturi harum!</p>
+              </div>
+            
+              <div class="row">
+                <div class="col-md-4 order-md-2 mb-4">
+                  <h4 class="d-flex justify-content-between align-items-center mb-3">
+                    <span class="text-muted">Din beställning:</span>
+                  </h4>
+                  <ul class="list-group mb-3">
+                    <li class="list-group-item d-flex justify-content-between lh-condensed">
+                      <div>
+                        <h6 class="my-0">Product name</h6>
+                        <small class="text-muted">Brief description</small>
+                      </div>
+                      <span class="text-muted">12 Kr</span>
+                    </li>
+                    <li class="list-group-item d-flex justify-content-between">
+                      <span>Totalt (SEK)</span>
+                      <strong>PRIS</strong>
+                    </li>
+                  </ul>
+            
+                </div>
+                <div class="col-md-8 order-md-1">
+                  <h4 class="mb-3">Beställningsformulär</h4>
+                  <form class="needs-validation" novalidate>
+                    <div class="row">
+                      <div class="col-md-6 mb-3">
+                        <label for="firstName">Förnamn</label>
+                        <input type="text" class="form-control" id="firstName" placeholder="Förnamn" value="" required>
+                        <div class="invalid-feedback">
+                          Förnamn krävs, minst 2 och max 50 tecken.
+                        </div>
+                      </div>
+                      <div class="col-md-6 mb-3">
+                        <label for="lastName">Efternamn</label>
+                        <input type="text" class="form-control" id="lastName" placeholder="Efternamn" value="" required>
+                        <div class="invalid-feedback">
+                          Efternamn krävs, minst 2 och max 50 tecken.
+                        </div>
+                      </div>
+                    </div>    
+                    <div class="mb-3">
+                      <label for="email">Email</label>
+                      <input type="email" class="form-control" id="email" placeholder="you@example.com">
+                      <div class="invalid-feedback">
+                        Email krävs, måste innehålla @ och vara max 50 tecken.
+                      </div>
+                    </div>
+            
+                    <div class="mb-3">
+                      <label for="address">Address</label>
+                      <input type="text" class="form-control" id="address" placeholder="Storgatan 12 B lgh 1001" required>
+                      <div class="invalid-feedback">
+                        Gatuadress krävs, max 50 tecken.
+                      </div>
+                    </div>    
+                    <div class="mb-3">
+                      <label for="country">Ort</label>
+                      <input type="text" class="form-control" id="ort" placeholder="Stockholm" required>
+                      <div class="invalid-feedback">
+                        Ort krävs, max 50 tecken.
+                      </div>
+                    </div>
+                      <div class="mb-3">
+                        <label for="Land">Land</label>
+                        <input type="text" class="form-control" id="land" placeholder="Sverige" disabled>
+                        <div class="invalid-feedback">
+                          Land krävs.
+                        </div>
+                      </div>
+                      <div class="col-md-3 mb-3">
+                        <label for="zip">Postnummer</label>
+                        <input type="text" class="form-control" id="Postnummer" placeholder="123 45" required>
+                        <div class="invalid-feedback">
+                          Postnummer krävs, skriv som exempelvis 123 45.
+                        </div>
+                      </div>
+                    <hr class="mb-3">
+                        <button class="btn btn-primary btn-lg" type="submit">Skicka beställning</button>
+                        <button class="btn btn-outline-primary btn-lg" type="reset">Rensa formulär</button>
+      
+                    </div>
+                </div>
+            </div>
+        
+            <!-- Beställningsformulär slutar-->
+        </div>        
+
+            <footer class="my-5 pt-5 text-muted text-center text-small">
+                <p class="mb-1">© 2021 - 2045 Company Name</p>
+                <ul class="list-inline">
+                    <li class="list-inline-item"><a href="#">Privacy</a></li>
+                    <li class="list-inline-item"><a href="#">Terms</a></li>
+                    <li class="list-inline-item"><a href="#">Support</a></li>
+                </ul>
+            </footer>
+        </div>
+
+        <footer class="bg-light">Copyright.</footer>
+    </body>
+</html>
