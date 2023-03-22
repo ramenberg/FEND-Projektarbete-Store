@@ -21,6 +21,7 @@
             crossorigin="anonymous"
         ></script>
         <link rel="stylesheet" href="css/style.css" />
+
     </head>
     <body>
         <div id="navbar">
@@ -61,37 +62,21 @@
             <h1>Du har valt:</h1>
             <!-- Produktinfo börjar -->
             <div class="chosen-product">
-                <!-- Uppbyggnad card -->
-                <div class="col-md-12 mb-4">
-                    <div class="card flex-row">
-                        <img
-                            class="card-img-top"
-                            src="https://fakestoreapi.com/img/61mtL65D4cL._AC_SX679_.jpg"
-                            alt="Card image cap"
-                        />
-                        <div class="card-body">
-                            <h5 class="card-title">Slim Casual Shirt</h5>
-                            <p class="card-text">
-                                Lorem ipsum dolor sit amet, consectetur
-                                adipiscing elit. Nulla eget ante lectus.
-                            </p>
-                            <p class="price">1 299 kr</p>
-                        </div>
-                    </div>
-                </div>
-                <!-- Slut uppbyggnad card -->
+              <script src="js/fetchproduct.js"></script>
             </div>
             <!-- Produktinfo slutar -->
-
+            <hr>
             <!-- Beställningsformulär börjar -->
             <div class="py-5 text-center">
         
-                <h2>Checkout form</h2>
+                <h2>Beställningsformulär</h2>
                 <p class="lead">Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem, necessitatibus nemo, explicabo pariatur, quas doloribus qui consectetur laboriosam incidunt sapiente provident similique eos suscipit ducimus repellat sint animi excepturi harum!</p>
               </div>
             
+              <!-- Info höger sida om formulär -->
               <div class="row">
                 <div class="col-md-4 order-md-2 mb-4">
+                  <div class="right-order-info">
                   <h4 class="d-flex justify-content-between align-items-center mb-3">
                     <span class="text-muted">Din beställning:</span>
                   </h4>
@@ -108,7 +93,7 @@
                       <strong>PRIS</strong>
                     </li>
                   </ul>
-            
+                 </div>
                 </div>
                 <div class="col-md-8 order-md-1">
                   <h4 class="mb-3">Beställningsformulär</h4>
