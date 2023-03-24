@@ -39,11 +39,11 @@ fetch('https://fakestoreapi.com/products')
             btnElement.addEventListener('click', (event) => {
                 event.preventDefault();
 
-                // Hämta informationen om produkten
-                const cardElement = event.target.parentElement.parentElement;
-                const imgElement = cardElement.querySelector('img');
-                const titleElement = cardElement.querySelector('h5');
-                const textElement = cardElement.querySelector('p');
+                // // Hämta informationen om produkten
+                // const cardElement = event.target.parentElement.parentElement;
+                // const imgElement = cardElement.querySelector('img');
+                // const titleElement = cardElement.querySelector('h5');
+                // const textElement = cardElement.querySelector('p');
 
                 // Lagra produktinformationen i sessionStorage
                 const produktInfo = {

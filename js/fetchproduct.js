@@ -20,6 +20,9 @@ if (produktensInfo !== null) {
     const textElement = document.createElement('p');
     textElement.classList.add('card-text');
     textElement.textContent = produktensInfo.description;
+    const textCategoryElement = document.createElement('p');
+    textCategoryElement.classList.add('card-text', 'capitalize');
+    textCategoryElement.textContent = produktensInfo.category;
     const priceElement = document.createElement('p');
     priceElement.classList.add('price');
     priceElement.textContent = produktensInfo.price;
@@ -27,40 +30,53 @@ if (produktensInfo !== null) {
     // Lägg till elementen till chosen-product och cardet till kolumnen
     cardBodyElement.appendChild(titleElement);
     cardBodyElement.appendChild(textElement);
+    cardBodyElement.appendChild(textCategoryElement);
     cardBodyElement.appendChild(priceElement);
     flexRowElement.appendChild(imgElement);
     flexRowElement.appendChild(cardBodyElement);
     cardElement.appendChild(flexRowElement);
     chosenProductElement.appendChild(cardElement);
 
-    // Lägg till produktens information på högra sidan av formuläret
-    const productInfoElement = document.querySelector('.right-order-info');
-    const productInfoTitleElement = document.createElement('h4');
-    productInfoTitleElement.classList.add(
-        'd-flex justify-content-between align-items-center mb-3'
-    );
-    const productInfoTitleSpanElement = document.createElement('span');
-    productInfoTitleSpanElement.classList.add('text-muted');
-    productInfoTitleSpanElement.textContent = 'Din beställning';
+    // Höger sida av formuläret
 
-    const productInfoUL = document.createElement('ul');
-    productInfoUL.classList.add('list-group mb-3');
-    const productInfoLI1 = document.createElement('li');
-    productInfoLI1.classList.add(
-        'list-group-item d-flex justify-content-between lh-condensed'
+    // Lägg till produktens information på högra sidan av formuläret
+    const productInfoElement = document.querySelector('#order-right-info');
+    const productInfoLi1 = document.createElement('li');
+    productInfoLi1.classList.add(
+        'list-group-item',
+        'd-flex',
+        'justify-content-between',
+        'lh-condensed'
     );
     const productUlLi1Div1 = document.createElement('div');
     const productUlLi1Div1H6 = document.createElement('h6');
     productUlLi1Div1H6.classList.add('my-0');
     productUlLi1Div1H6.textContent = produktensInfo.title;
-    const smallDescriptionElement = document.createElement('small');
-    smallDescriptionElement.classList.add('text-muted');
-    smallDescriptionElement.textContent = produktensInfo.description;
 
-    const productSmallPriceElement = document.createElement('small');
-    productSmallPriceElement.classList.add('text-muted');
-    productSmallPriceElement.textContent = produktensInfo.price;
-    // Lägg til elementen till productInfoTitleElement
+    // const productSmallPriceElement = document.createElement('small');
+    // productSmallPriceElement.classList.add('text-muted');
+    // productSmallPriceElement.textContent = produktensInfo.price;
+
+    const productLiPriceElement = document.createElement('li');
+    productLiPriceElement.classList.add(
+        'list-group-item',
+        'd-flex',
+        'justify-content-between'
+    );
+    const productLiPriceElementSpan = document.createElement('span');
+    productLiPriceElementSpan.textContent = 'Total (SEK)';
+    const productLiPriceElementStrong = document.createElement('strong');
+    productLiPriceElementStrong.textContent = produktensInfo.price;
+
+    // Lägg till elementen till productInfoTitleElement
+    productInfoLi1.appendChild(productUlLi1Div1);
+    productUlLi1Div1.appendChild(productUlLi1Div1H6);
+    // productUlLi1Div1.appendChild(productSmallPriceElement);
+    productInfoElement.appendChild(productInfoLi1);
+
+    productLiPriceElement.appendChild(productLiPriceElementSpan);
+    productLiPriceElement.appendChild(productLiPriceElementStrong);
+    productInfoElement.appendChild(productLiPriceElement);
 } else {
     console.log('produktensInfo är null');
 }
