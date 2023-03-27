@@ -28,14 +28,14 @@ if (produktensInfo !== null) {
     priceElement.textContent = produktensInfo.price;
 
     // Lägg till elementen till chosen-product och cardet till kolumnen
-    cardBodyElement.appendChild(titleElement);
-    cardBodyElement.appendChild(textElement);
-    cardBodyElement.appendChild(textCategoryElement);
-    cardBodyElement.appendChild(priceElement);
-    flexRowElement.appendChild(imgElement);
-    flexRowElement.appendChild(cardBodyElement);
-    cardElement.appendChild(flexRowElement);
-    chosenProductElement.appendChild(cardElement);
+    // cardBodyElement.appendChild(titleElement);
+    // cardBodyElement.appendChild(textElement);
+    // cardBodyElement.appendChild(textCategoryElement);
+    // cardBodyElement.appendChild(priceElement);
+    // flexRowElement.appendChild(imgElement);
+    // flexRowElement.appendChild(cardBodyElement);
+    // cardElement.appendChild(flexRowElement);
+    // chosenProductElement.appendChild(cardElement);
 
     // Höger sida av formuläret
 

@@ -60,7 +60,7 @@ fetch('https://fakestoreapi.com/products')
                 );
 
                 // Omdirigera till order.html
-                window.location.href = 'order.html';
+                window.location.href = 'order.html?=' + produkt.id;
             });
 
             // Lägg till elementen till cardet och cardet till kolumnen
