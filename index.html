@@ -27,47 +27,12 @@
             href="https://fonts.googleapis.com/css2?family=Luckiest+Guy&display=swap"
             rel="stylesheet"
         />
-        <script src="js/script.js" defer></script>
+        <!-- <script src="js/script.js" defer></script> -->
     </head>
     <body>
         <div class="upper-gradient" id="upper-gradient-box">
             <!--Navbar start-->
-            <div id="navbar">
-                <nav
-                    class="navbar navbar-expand-lg bg-body-tertiary navbar-dark bg-dark"
-                >
-                    <div class="container-fluid">
-                        <a class="navbar-brand" href="#">Fake Store</a>
-                        <button
-                            class="navbar-toggler"
-                            type="button"
-                            data-bs-toggle="collapse"
-                            data-bs-target="#navbarNavAltMarkup"
-                            aria-controls="navbarNavAltMarkup"
-                            aria-expanded="false"
-                            aria-label="Toggle navigation"
-                        >
-                            <span class="navbar-toggler-icon"></span>
-                        </button>
-                        <div
-                            class="collapse navbar-collapse"
-                            id="navbarNavAltMarkup"
-                        >
-                            <div class="navbar-nav" id="nav">
-                                <a
-                                    class="nav-link active"
-                                    aria-current="page"
-                                    href="index.html"
-                                    >Start</a
-                                >
-                                <a class="nav-link" href="contact.html"
-                                    >Kontakt</a
-                                >
-                            </div>
-                        </div>
-                    </div>
-                </nav>
-            </div>
+            <div id="navbar"></div>
             <!-- navbar end-->
             <div class="container md-12 mt-5">
                 <div class="upper-slogan">
@@ -80,10 +45,31 @@
                     </div>
                 </div>
                 <div class="row" id="produkter">
-                    <script src="js/fetchproducts.js"></script>
+                    <!--
+                    Snippet för uppbyggnad av produkter
+                    <div class="col-md-3 mb-4">
+                        <div class="card">
+                            <img src="${product.image}" class="card-img-top" alt="${product.title}">
+                            <div class="card-body">
+                                <h5 class="card-title">${product.title}</h5>
+                                <p class="card-text">${product.description}</p>
+                                <p class="card-text">${product.price} kr</p>
+                                <a href="#" class="btn btn-primary">Lägg till i varukorg</a>
+                            </div>
+                        </div>
+                    </div>
+                    -->
                 </div>
             </div>
-            <footer class="bg-light">Copyright.</footer>
+            <div id="footer"></div>
         </div>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+        <script>
+            $(document).ready(function () {
+                $('#navbar').load('dom/nav.html');
+                $('#footer').load('dom/footer.html');
+            });
+        </script>
+        <script src="js/jquery-products.js"></script>
     </body>
 </html>

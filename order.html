@@ -24,40 +24,10 @@
 
     </head>
     <body>
-        <div id="navbar">
-            <nav
-                class="navbar navbar-expand-lg bg-body-tertiary navbar-dark bg-dark"
-            >
-                <div class="container-fluid">
-                    <a class="navbar-brand" href="#">Fake Store</a>
-                    <button
-                        class="navbar-toggler"
-                        type="button"
-                        data-bs-toggle="collapse"
-                        data-bs-target="#navbarNavAltMarkup"
-                        aria-controls="navbarNavAltMarkup"
-                        aria-expanded="false"
-                        aria-label="Toggle navigation"
-                    >
-                        <span class="navbar-toggler-icon"></span>
-                    </button>
-                    <div
-                        class="collapse navbar-collapse"
-                        id="navbarNavAltMarkup"
-                    >
-                        <div class="navbar-nav">
-                            <a
-                                class="nav-link active"
-                                aria-current="page"
-                                href="index.html"
-                                >Start</a
-                            >
-                            <a class="nav-link" href="contact.html">Kontakt</a>
-                        </div>
-                    </div>
-                </div>
-            </nav>
-        </div>
+      <div class="upper-gradient" id="upper-gradient-box">
+      <!--Navbar start-->
+        <div id="navbar"></div>
+        <!--Navbar end-->
         <div class="container md-12 mt-5">
             <!-- Beställningsformulär börjar -->
             <div class="py-5">
@@ -142,19 +112,20 @@
             </div>
         
             <!-- Beställningsformulär slutar-->
-        </div>        
-
-            <footer class="my-5 pt-5 text-muted text-center text-small">
-                <p class="mb-1">© 2021 - 2045 Company Name</p>
-                <ul class="list-inline">
-                    <li class="list-inline-item"><a href="#">Privacy</a></li>
-                    <li class="list-inline-item"><a href="#">Terms</a></li>
-                    <li class="list-inline-item"><a href="#">Support</a></li>
-                </ul>
-            </footer>
+            <div id="footer"></div>
         </div>
+        </div>        
+      </div>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+        <script>
+            $(document).ready(function () {
+                $('#navbar').load('dom/nav.html');
+                $('#footer').load('dom/footer.html');
+            });
 
-        <footer class="bg-light">Copyright.</footer>
-        <script src="js/fetchproduct.js"></script>
+          
+        </script>
+
+        <script src="js/jquery-product.js"></script>
     </body>
 </html>
