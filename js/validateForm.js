@@ -70,5 +70,6 @@ form.on('submit', function(event) {
   // Om alla fält är validerade, skicka formuläret och spara i sessionstorage
   if (isValid) {
     form.submit(sessionStorage.setItem("form", JSON.stringify(form)));
+    console.log(form)
   }
 });
