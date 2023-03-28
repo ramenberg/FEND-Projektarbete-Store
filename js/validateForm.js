@@ -5,7 +5,7 @@ form.on('submit', function(event) {
   // Stoppa formuläret från att skickas automatiskt
   event.preventDefault();
 
-  // Hämta alla fält i formuläret
+  // skapa variabler av alla fält i formuläret
   const firstName = $('#firstName').val();
   const lastName = $('#lastName').val();
   const email = $('#email').val();
