@@ -88,12 +88,21 @@
                       <div class="invalid-feedback">
                         Gatuadress krävs, max 50 tecken.
                       </div>
-                    </div>    
-                    <div class="mb-3">
-                      <label for="city">Ort</label>
-                      <input type="text" class="form-control" id="city" placeholder="Stockholm" required>
-                      <div class="invalid-feedback">
-                        Ort krävs, max 50 tecken.
+                    </div>
+                    <div class="row">
+                      <div class="col-md-6 mb-3">
+                        <label for="postalCode">Postnummer</label>
+                        <input type="text" class="form-control" id="postalCode" placeholder="123 45" required>
+                        <div class="invalid-feedback">
+                          Postnummer krävs, skriv som exempelvis 123 45.
+                        </div>
+                      </div>
+                      <div class="col-md-6 mb-3">
+                        <label for="city">Ort</label>
+                        <input type="text" class="form-control" id="city" placeholder="Stockholm" required>
+                        <div class="invalid-feedback">
+                          Ort krävs, max 50 tecken.
+                        </div>
                       </div>
                     </div>
                       <div class="mb-3">
@@ -101,13 +110,6 @@
                         <input type="text" class="form-control" id="country" placeholder="Sverige" disabled>
                         <div class="invalid-feedback">
                           Land krävs.
-                        </div>
-                      </div>
-                      <div class="col-md-3 mb-3">
-                        <label for="postalCode">Postnummer</label>
-                        <input type="text" class="form-control" id="postalCode" placeholder="123 45" required>
-                        <div class="invalid-feedback">
-                          Postnummer krävs, skriv som exempelvis 123 45.
                         </div>
                       </div>
                     <hr class="mb-3">
