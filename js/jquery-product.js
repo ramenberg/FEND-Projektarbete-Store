@@ -37,26 +37,28 @@ $.getJSON('https://fakestoreapi.com/products/' + productId).done(function (
                 <div class="ms-3"><strong>Antal</strong></div>
             </div>
         </li>
-        <li class="list-group-item">
-            <div class="d-flex align-items-start">
-                <div class="flex-shrink-0 mr-3 product-image">
-                    <img src="${product.image}" alt="${product.title}" class="product-image-small" width="100" height="100" />
+        <li class="list-group-item m-0 p-1">
+            <div class="row justify-content-between m-auto" id="confirmation-products-container">
+                <!-- Products START -->
+                <div class="col-3 product-image-small">
+                    <img src="${product.image}" alt="${product.title}" />
                 </div>
-                <div class="ms-3">
+                <div class="col-8">
                     <h6 class="mb-2">${product.title}</h6>
                     <p class="my-0">${product.description}</p>
-                    <div class="d-flex justify-content-between my-2">
-                    <p class="my-0">Betyg: ${product.rating.rate}</p>
-                    <p class="my-0">Antal röster: ${product.rating.count}</p>
+                    <div class="justify-content-between my-2">
+                        <p class="my-0">Betyg: ${product.rating.rate}</p>
+                        <p class="my-0">Antal röster: ${product.rating.count}</p>
                     </div>
                     <small class="capitalize">Kategori: ${product.category}</small>
                 </div>
-                <div class="ms-auto product-number">
-                    <div class="d-flex">
-                        <p class="my-0">1</p>
+                <div class="col-1 text-center">
+                    <div class="float-end">
+                        <p>1</p>
                     </div>
                 </div>
-            </div>
+                <!-- Products END -->
+                </div>
         </li>
         <li class="list-group-item d-flex justify-content-between">
             <strong>Totalsumma: </strong>

@@ -51,13 +51,11 @@ h1 {
 	height: auto;
 	object-fit: cover;
 }
-.product-image-small {
-	max-width: 100px;
-	height: 100px;
+.product-image-small img {
+	max-width: 100%;
+	height: auto;
 	overflow: hidden;
-}
-.product-number {
-	width: 15%;
+	object-fit: cover;
 }
 .iframe-container {
 	position: relative;
@@ -75,4 +73,16 @@ h1 {
 	padding: 0;
 	height: 100%;
 	width: 100%;
+}
+.bg-green {
+	background-color: green;
+}
+.w-10 {
+	width: 10%;
+}
+.w-20 {
+	width: 20%;
+}
+.w-70 {
+	width: 70%;
 }
