@@ -13,7 +13,7 @@ $(document).ready(function (){
     const email = $('#email').val();
     const address = $('#address').val();
     const city = $('#city').val();
-    const postnummer = $('#Postnummer').val();
+    const postalCode = $('#postalCode').val();
   
     // variabel för att hålla koll på om alla fält är validerade
     let isValid = true;
@@ -34,7 +34,7 @@ $(document).ready(function (){
       $('#lastName').removeClass('is-invalid');
     }
   
-    //valider mobilnr
+    //valider mobilnr TODO: validera att det  får innehålla siffror, bindestreck och parenteser. Max 50 tecken
     if(phone.length < 2 || phone.length > 50){
       $('#phone').addClass('is-invalid');
       isValid = false
@@ -61,7 +61,7 @@ $(document).ready(function (){
     }
   
     // Validera ort
-    if (city.lenght < 2 || ort.length > 50) {
+    if (city.length < 2 || city.length > 50) {
       $('#city').addClass('is-invalid');
       isValid = false;
     } else {
@@ -69,8 +69,8 @@ $(document).ready(function (){
     }
   
     // Validera postnummer
-    var postnummerRegex = /^\d{3}\s?\d{2}$/;
-    if (!postnummerRegex.test(postnummer)) {
+    var postalCodeRegex = /^\d{3}\s?\d{2}$/;
+    if (!postalCodeRegex.test(postalCode)) {
       $('#postalCode').addClass('is-invalid');
       isValid = false;
     } else {
