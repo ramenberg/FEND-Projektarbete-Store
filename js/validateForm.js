@@ -1,25 +1,38 @@
 $(document).ready(function (){
-  const form = $('.needs-validation');
+  
 
   // Bind eventlyssnare på formuläret submit
-  form.on('submit', function(event) {
+  $('form').on('submit', function(event) {
     // Stoppa formuläret från att skickas automatiskt
     event.preventDefault();
+
+    //lägg alla formulärfält i en variabel som tar emot användarens input
+
+    const input = {
+        firstName: $("#firstName").val(),
+        lastName: $("#lastName").val(),
+        phone: $("#phone").val(),
+        email: $("#email").val(),
+        address: $("#address").val(),
+        postalCode: $("#postalCode").val(),
+        city: $("#city").val(),
+        country: $("#country").val()
+    }
   
     // skapa variabler av alla fält i formuläret
-    const firstName = $('#firstName').val();
-    const lastName = $('#lastName').val();
-    const phone = $('#phone').val();
-    const email = $('#email').val();
-    const address = $('#address').val();
-    const city = $('#city').val();
-    const postalCode = $('#postalCode').val();
+    //const firstName = $('#firstName').val();
+    //const lastName = $('#lastName').val();
+    //const phone = $('#phone').val();
+    //const email = $('#email').val();
+    //const address = $('#address').val();
+    //const city = $('#city').val();
+    //const postalCode = $('#postalCode').val();
   
     // variabel för att hålla koll på om alla fält är validerade
     let isValid = true;
   
     // Validera förnamn
-    if (firstName.length < 2 || firstName.length > 50) {
+    if (input.firstName.length < 2 || input.firstName.length > 50) {
       $('#firstName').addClass('is-invalid');
       isValid = false;
     } else {
@@ -27,7 +40,7 @@ $(document).ready(function (){
     }
   
     // Validera efternamn
-    if (lastName.length < 2 || lastName.length > 50) {
+    if (input.lastName.length < 2 || input.lastName.length > 50) {
       $('#lastName').addClass('is-invalid');
       isValid = false;
     } else {
@@ -35,7 +48,7 @@ $(document).ready(function (){
     }
   
     //valider mobilnr TODO: validera att det  får innehålla siffror, bindestreck och parenteser. Max 50 tecken
-    if(phone.length < 2 || phone.length > 50){
+    if(input.phone.length < 2 || input.phone.length > 50){
       $('#phone').addClass('is-invalid');
       isValid = false
     } else {
@@ -44,8 +57,8 @@ $(document).ready(function (){
   
     // Validera email
     
-    var emailRegex = /^\S+@\S+\.\S+$/;
-    if (!emailRegex.test(email) || email.length > 50) {
+    const emailRegex = /^\S+@\S+\.\S+$/;
+    if (!emailRegex.test(input.email) || input.email.length > 50) {
       $('#email').addClass('is-invalid');
       isValid = false;
     } else {
@@ -53,7 +66,7 @@ $(document).ready(function (){
     }
   
     // Validera address
-    if (address.length < 2 || address.length > 50) {
+    if (input.address.length < 2 || input.address.length > 50) {
       $('#address').addClass('is-invalid');
       isValid = false;
     } else {
@@ -61,7 +74,7 @@ $(document).ready(function (){
     }
   
     // Validera ort
-    if (city.length < 2 || city.length > 50) {
+    if (input.city.length < 2 || input.city.length > 50) {
       $('#city').addClass('is-invalid');
       isValid = false;
     } else {
@@ -69,8 +82,8 @@ $(document).ready(function (){
     }
   
     // Validera postnummer
-    var postalCodeRegex = /^\d{3}\s?\d{2}$/;
-    if (!postalCodeRegex.test(postalCode)) {
+    const postalCodeRegex = /^\d{3}\s?\d{2}$/;
+    if (!postalCodeRegex.test(input.postalCode)) {
       $('#postalCode').addClass('is-invalid');
       isValid = false;
     } else {
@@ -79,8 +92,14 @@ $(document).ready(function (){
   
     // Om alla fält är validerade, skicka formuläret och spara i sessionstorage
     if (isValid) {
-      form.submit(sessionStorage.setItem("form", JSON.stringify(form))); //lägg in infromaionen som JSON, måste åtgärdas
-      console.log(form)
+
+      sessionStorage.setItem('customerInfo',JSON.stringify(input))
+      
+      this.submit();
+      window.location.href = 'confirmation.html';
+      console.log(sessionStorage.getItem('customerInfo'))
+      
+      
     }
   });
   
