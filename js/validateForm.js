@@ -6,17 +6,24 @@ $(document).ready(function (){
     // Stoppa formuläret från att skickas automatiskt
     event.preventDefault();
 
-    //lägg alla formulärfält i en variabel som tar emot användarens input
+    //Postnummer ska ha fem siffror i format 000 00. Användaren kan skicka in fem siffor med ett mellarum. Nedan tar bort allt som inte är en siffra.
+    const postalCode = $('#postalCode').val().replace(/\D/g, '');
 
+    //Delar upp siffrorna 00000 och lägger in mellanrum på rätt ställe 000 00
+    const postalCodeFormatted = `${postalCode.slice(0, 3)} ${postalCode.slice(3)}`;
+
+    console.log(postalCodeFormatted)
+
+    //lägg alla formulärfält i en variabel som tar emot användarens input
     const input = {
         firstName: $("#firstName").val(),
         lastName: $("#lastName").val(),
         phone: $("#phone").val(),
         email: $("#email").val(),
         address: $("#address").val(),
-        postalCode: $("#postalCode").val(),
+        postalCode: postalCodeFormatted,
         city: $("#city").val(),
-        country: $("#country").val()
+        country: $("#coutnry").val()
     }
   
     // skapa variabler av alla fält i formuläret
@@ -81,12 +88,14 @@ $(document).ready(function (){
     } else {
       $('#city').removeClass('is-invalid');
     }
-  
+    
+
     // Validera postnummer
     const postalCodeRegex = /^\d{3}\s?\d{2}$/;
     if (!postalCodeRegex.test(input.postalCode)) {
       $('#postalCode').addClass('is-invalid');
       isValid = false;
+      
     } else {
       $('#postalCode').removeClass('is-invalid');
     }
@@ -99,9 +108,7 @@ $(document).ready(function (){
       this.submit();
       window.location.href = 'confirmation.html';
       console.log(sessionStorage.getItem('customerInfo'))
-      
-      
-    }
+      }
   });
   
 })
