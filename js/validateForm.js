@@ -79,7 +79,7 @@ $(document).ready(function (){
   
     // Om alla fält är validerade, skicka formuläret och spara i sessionstorage
     if (isValid) {
-      form.submit(sessionStorage.setItem("form", JSON.stringify(form)));
+      form.submit(sessionStorage.setItem("form", JSON.stringify(form))); //lägg in infromaionen som JSON, måste åtgärdas
       console.log(form)
     }
   });
