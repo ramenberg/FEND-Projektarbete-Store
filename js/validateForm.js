@@ -48,7 +48,8 @@ $(document).ready(function (){
     }
   
     //valider mobilnr TODO: validera att det  får innehålla siffror, bindestreck och parenteser. Max 50 tecken
-    if(input.phone.length < 2 || input.phone.length > 50){
+    const phoneRegex = /^[\d()-]{1,50}$/;
+    if(!phoneRegex.test(input.phone) || input.phone.length > 50){
       $('#phone').addClass('is-invalid');
       isValid = false
     } else {
