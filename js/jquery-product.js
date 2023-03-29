@@ -21,8 +21,8 @@ $.getJSON('https://fakestoreapi.com/products/' + productId).done(function (
         <span class="text-muted invisible">${product.price}</span>
         </li>
         <li class="list-group-item d-flex justify-content-between">
-            <span>Totalt (SEK)</span>
-            <strong>${product.price}</strong>
+            <strong>Totalsumma: </strong>
+            <strong>${product.price} kr</strong>
         </li>
         `;
 
@@ -59,7 +59,7 @@ $.getJSON('https://fakestoreapi.com/products/' + productId).done(function (
             </div>
         </li>
         <li class="list-group-item d-flex justify-content-between">
-            <strong>Summa beställning: </strong>
+            <strong>Totalsumma: </strong>
             <strong>${product.price} kr</strong>
         </li>
 

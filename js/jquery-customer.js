@@ -4,14 +4,26 @@ $(document).ready(function () {
 	function showCustomerInfo(customer) {
 		const container = $('#confirmation-customer-info');
 		container.html(`
-        <p>${customer.firstName} ${customer.lastName}</p>
-        <p>${customer.address}</p>
-        <p>${customer.postnummer} ${customer.ort}</p>
-		<p>${customer.country}</p>
-		<br>
-		<p>${customer.email}</p>
-		<p>${customer.phone}</p>
+		<div class="row d-flex justify-content-between">
+			<div class="col-md-12">
+				<small>Adress:</small>
+				<p>${customer.firstName} ${customer.lastName}<br>
+				${customer.address}<br>
+				${customer.postalCode} ${customer.city}<br>
+				${customer.country}</p>
+			</div>
+			<div>
+				<small>E-mail:</small>
+				<p>${customer.email}</p>
+				<small>Telefon:</small>
+				<p>${customer.phone}</p>
+			</div>
+		</div>
         `);
 	}
-	showCustomerInfo(customerInfo);
+	if (customerInfo) {
+		showCustomerInfo(customerInfo);
+	} else {
+		console.log('Ingen kund vald eller sessionStorage är tom.');
+	}
 });
