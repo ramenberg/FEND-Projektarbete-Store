@@ -52,19 +52,19 @@ form.on('submit', function(event) {
 
   // Validera ort
   if (ort.lenght < 2 || ort.length > 50) {
-    $('#ort').addClass('is-invalid');
+    $('#city').addClass('is-invalid');
     isValid = false;
   } else {
-    $('#ort').removeClass('is-invalid');
+    $('#city').removeClass('is-invalid');
   }
 
   // Validera postnummer
   var postnummerRegex = /^\d{3}\s?\d{2}$/;
   if (!postnummerRegex.test(postnummer)) {
-    $('#Postnummer').addClass('is-invalid');
+    $('#postalCode').addClass('is-invalid');
     isValid = false;
   } else {
-    $('#Postnummer').removeClass('is-invalid');
+    $('#postalCode').removeClass('is-invalid');
   }
 
   // Om alla fält är validerade, skicka formuläret och spara i sessionstorage
