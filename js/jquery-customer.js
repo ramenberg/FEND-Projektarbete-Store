@@ -21,7 +21,7 @@ $(document).ready(function () {
 		</div>
         `);
 	}
-	if (customerInfo) {
+	if ($(customerInfo).length) {
 		showCustomerInfo(customerInfo);
 	} else {
 		console.log('Ingen kund vald eller sessionStorage är tom.');
