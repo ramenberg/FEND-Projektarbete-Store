@@ -40,69 +40,18 @@
 					</div>
 				</div>
 				<div class="row" id="produkter">
-					<!--
-                    Snippet för uppbyggnad av produkter
-                    <div class="col-md-3 mb-4">
-                        <div class="card">
-                            <img src="${product.image}" class="card-img-top" alt="${product.title}">
-                            <div class="card-body">
-                                <h5 class="card-title">${product.title}</h5>
-                                <p class="card-text">${product.description}</p>
-                                <p class="card-text">${product.price} kr</p>
-                                <a href="#" class="btn btn-primary">Lägg till i varukorg</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-3 mb-4">
-                        <div class="card">
-                            <img
-                                class="card-img-top"
-                                src="https://fakestoreapi.com/img/81QpkIctqPL._AC_SX679_.jpg"
-                                alt="Card image cap"
-                            />
-                            <div class="card-body">
-                                <h5 class="card-title">Leather Shoes</h5>
-                                <p class="card-text">
-                                    Lorem ipsum dolor sit amet, consectetur
-                                    adipiscing elit. Nulla eget ante lectus.
-                                </p>
-                                <a href="#" class="btn btn-primary">Beställ</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-3 mb-4">
-                        <div class="card">
-                            <img src="#" alt="#" class="card-img-top" />
-                            <div class="card-body">
-                                <h5 class="card-title">Rubrik4</h5>
-                                <p class="card-text">Lorem ipsum...</p>
-                                <a href="#" class="btn btn-primary">Beställ</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-3 mb-4">
-                        <div class="card">
-                            <img src="#" alt="#" class="card-img-top" />
-                            <div class="card-body">
-                                <h5 class="card-title">Rubrik5</h5>
-                                <p class="card-text">Lorem ipsum...</p>
-                                <a href="#" class="btn btn-primary">Beställ</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-3 mb-4">
-                        <div class="card">
-                            <img src="#" alt="#" class="card-img-top" />
-                            <div class="card-body">
-                                <h5 class="card-title">Rubrik6</h5>
-                                <p class="card-text">Lorem ipsum...</p>
-                                <a href="#" class="btn btn-primary">Beställ</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <footer class="bg-light">Copyright.</footer>
-        </div>
-    </body>
+					<!-- Produkter -->
+				</div>
+			</div>
+			<div id="footer"></div>
+		</div>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+		<script>
+			$(document).ready(function () {
+				$('#navbar').load('dom/nav.html');
+				$('#footer').load('dom/footer.html');
+			});
+		</script>
+		<script src="js/jquery-products.js"></script>
+	</body>
 </html>
