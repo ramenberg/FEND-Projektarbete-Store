@@ -1,9 +1,7 @@
 $(document).ready(function (){
   
 
-  // Bind eventlyssnare på formuläret submit
   $('form').on('submit', function(event) {
-    // Stoppa formuläret från att skickas automatiskt
     event.preventDefault();
 
     //Postnummer ska ha fem siffror i format 000 00. Användaren kan skicka in fem siffor med ett mellarum. Nedan tar bort allt som inte är en siffra.
@@ -16,24 +14,15 @@ $(document).ready(function (){
 
     //lägg alla formulärfält i en variabel som tar emot användarens input
     const input = {
-        firstName: $("#firstName").val(),
-        lastName: $("#lastName").val(),
-        phone: $("#phone").val(),
-        email: $("#email").val(),
-        address: $("#address").val(),
+        firstName: $('#firstName').val(),
+        lastName: $('#lastName').val(),
+        phone: $('#phone').val(),
+        email: $('#email').val(),
+        address: $('#address').val(),
         postalCode: postalCodeFormatted,
-        city: $("#city").val(),
-        country: $("#coutnry").val()
+        city: $('#city').val(),
+        country: $('#coutnry').val()
     }
-  
-    // skapa variabler av alla fält i formuläret
-    //const firstName = $('#firstName').val();
-    //const lastName = $('#lastName').val();
-    //const phone = $('#phone').val();
-    //const email = $('#email').val();
-    //const address = $('#address').val();
-    //const city = $('#city').val();
-    //const postalCode = $('#postalCode').val();
   
     // variabel för att hålla koll på om alla fält är validerade
     let isValid = true;
@@ -100,7 +89,7 @@ $(document).ready(function (){
       $('#postalCode').removeClass('is-invalid');
     }
   
-    // Om alla fält är validerade, skicka formuläret och spara i sessionstorage
+    // Om alla fält är validerade, godkänn formuläret och spara i sessionstorage
     if (isValid) {
 
       sessionStorage.setItem('customerInfo',JSON.stringify(input))
