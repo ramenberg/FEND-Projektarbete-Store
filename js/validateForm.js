@@ -43,9 +43,9 @@ $(document).ready(function (){
       $('#lastName').removeClass('is-invalid');
     }
   
-    //valider mobilnr TODO: validera att det  får innehålla siffror, bindestreck och parenteser. Max 50 tecken
+    //validerar mobilnr. Det får endast innehålla siffror, bindestreck och parenteser. Max 50 tecken
     const phoneRegex = /^[\d()-]{1,50}$/;
-    if(!phoneRegex.test(input.phone) || input.phone.length > 50){
+    if(!phoneRegex.test(input.phone)){
       $('#phone').addClass('is-invalid');
       isValid = false
     } else {
@@ -53,7 +53,6 @@ $(document).ready(function (){
     }
   
     // Validera email
-    
     const emailRegex = /^\S+@\S+\.\S+$/;
     if (!emailRegex.test(input.email) || input.email.length > 50) {
       $('#email').addClass('is-invalid');
@@ -77,7 +76,6 @@ $(document).ready(function (){
     } else {
       $('#city').removeClass('is-invalid');
     }
-    
 
     // Validera postnummer
     const postalCodeRegex = /^\d{3}\s?\d{2}$/;
@@ -96,7 +94,6 @@ $(document).ready(function (){
       
       this.submit();
       window.location.href = 'confirmation.html';
-      console.log(sessionStorage.getItem('customerInfo'))
       }
   });
   
