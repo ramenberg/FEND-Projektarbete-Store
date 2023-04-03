@@ -1,9 +1,10 @@
-$(document).ready(function () {
-	const customerInfo = JSON.parse(sessionStorage.getItem('customerInfo'));
+$(document).ready(
+	function () {
+		const customerInfo = JSON.parse(sessionStorage.getItem('customerInfo'));
 
-	function showCustomerInfo(customer) {
-		const container = $('#confirmation-customer-info');
-		container.html(`
+		function showCustomerInfo(customer) {
+			const container = $('#confirmation-customer-info');
+			container.html(`
 		<div class="row d-flex justify-content-between">
 			<div class="col-md-12">
 				<small>Adress:</small>
@@ -20,10 +21,13 @@ $(document).ready(function () {
 			</div>
 		</div>
         `);
-	}
-	if ($(customerInfo).length) {
-		showCustomerInfo(customerInfo);
-	} else {
-		console.log('Ingen kund vald eller sessionStorage är tom.');
-	}
-});
+		}
+		if ($(customerInfo).length) {
+			showCustomerInfo(customerInfo);
+		} else {
+			console.log('Ingen kund vald eller sessionStorage är tom.');
+		}
+	}.fail(function (error) {
+		console.log(error);
+	})
+);

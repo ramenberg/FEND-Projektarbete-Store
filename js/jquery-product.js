@@ -1,19 +1,18 @@
 const productId = sessionStorage.getItem('productId');
-$.getJSON('https://fakestoreapi.com/products/' + productId).done(function (
-	product
-) {
-	const chosenProduct = {
-		id: product.id,
-		title: product.title,
-		price: product.price,
-		description: product.description,
-		category: product.category,
-		image: product.image,
-		rating: product.rating,
-	};
-	if ($('#order-right-info').length) {
-		// order-right på order.html
-		let productItemMinimal = `
+$.getJSON('https://fakestoreapi.com/products/' + productId)
+	.done(function (product) {
+		const chosenProduct = {
+			id: product.id,
+			title: product.title,
+			price: product.price,
+			description: product.description,
+			category: product.category,
+			image: product.image,
+			rating: product.rating,
+		};
+		if ($('#order-right-info').length) {
+			// order-right på order.html
+			let productItemMinimal = `
         <li class="list-group-item d-flex justify-content-between lh-condensed">
         <div>
             <h6 class="my-0">${product.title}</h6>
@@ -26,11 +25,11 @@ $.getJSON('https://fakestoreapi.com/products/' + productId).done(function (
         </li>
         `;
 
-		$('#order-right-info').html(productItemMinimal);
-	}
-	// order-right på confirmation.html
-	else if ($('#confirmation-order-right-info').length) {
-		let productItemAllInfo = `
+			$('#order-right-info').html(productItemMinimal);
+		}
+		// order-right på confirmation.html
+		else if ($('#confirmation-order-right-info').length) {
+			let productItemAllInfo = `
         <li class="list-group-item">
             <div class="d-flex justify-content-between">
                 <div class="ms-3"><strong>Produkt</strong></div>
@@ -67,13 +66,16 @@ $.getJSON('https://fakestoreapi.com/products/' + productId).done(function (
 
     
         `;
-		$('#confirmation-order-right-info').html(productItemAllInfo);
-	} else {
-		console.log('Ingen produkt vald');
-	}
+			$('#confirmation-order-right-info').html(productItemAllInfo);
+		} else {
+			console.log('Ingen produkt vald');
+		}
 
-	sessionStorage.setItem(
-		'chosenProduct', // nyckel
-		JSON.stringify(chosenProduct)
-	);
-});
+		sessionStorage.setItem(
+			'chosenProduct', // nyckel
+			JSON.stringify(chosenProduct)
+		);
+	})
+	.fail(function (error) {
+		console.log(error);
+	});
