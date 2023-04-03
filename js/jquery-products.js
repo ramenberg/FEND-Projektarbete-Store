@@ -1,5 +1,4 @@
 $(document).ready(function () {
-	//$.getJSON('https://fakestoreapi.com/products', products => $("#produkter").html(products))
 	$.getJSON('https://fakestoreapi.com/products')
 		.done(function (products) {
 			let productItem = $.map(products, function (product) {
@@ -18,6 +17,7 @@ $(document).ready(function () {
                 `;
 			});
 			$('#produkter').html(productItem);
+
 			$('.addToCartBtn').click(function (e) {
 				e.preventDefault();
 				const productId = $(this).data('product-id');
